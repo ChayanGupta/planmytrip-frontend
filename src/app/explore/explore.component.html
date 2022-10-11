@@ -1,0 +1,206 @@
+<section>
+  <div class="filter ">
+    <h3>Apply Filter :</h3><br>
+    <form action="">
+      <div class="m-2">
+        <div class="input-group mt-2">
+          <label class="input-group-text" for="inputGroupSelect01">Destination</label>
+          <select class="form-select" id="inputGroupSelect01" #destination (change)="onChangeDestination(destination.value)">
+            <option selected>Choose Destination...</option>
+            <option *ngFor="let package of packages" value={{package.id}}>{{package.cityName}}</option>
+          </select>
+        </div>
+        <div class="input-group mt-2">
+          <label class="input-group-text" for="inputGroupSelect01">Activities</label>
+          <select class="form-select" id="inputGroupSelect01" #activity (change)="onChangeActivity(activity.value)">
+            <option selected>Choose Activity...</option>
+            <option  *ngFor="let activity of activities" value={{activity.id}}>{{activity.activityName}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="m-2">
+        <div class="input-group mt-2">
+          <label class="input-group-text" for="inputGroupSelect01">Area of interest</label>
+          <select class="form-select" id="inputGroupSelect01" #interest (change)="onChangeAreaOfInterest(interest.value)">
+            <option selected>Choose Area...</option>
+            <option *ngFor="let item of areaOfInterest" value={{item.id}}>{{item.name}}</option>
+          </select>
+        </div>
+        <input class="budget form-control mt-2" type="number" placeholder="Enter Budget (greater then 25000)"
+          name="budget" id="budget" min="25000" max="400000" #maxPrice (change)="onChangeMaxPrice(maxPrice.value)">
+      </div>
+
+      <button class="btn btn-primary m-5">Apply</button>
+    </form>
+  </div>
+  <div class="bestSelling container">
+    <h3>Best Selling Destinations...</h3>
+    <div class="cards">
+      <ng-container *ngFor="let package of packages">
+        <ng-container *ngFor="let type of package.type">
+          <div *ngIf="type.name==='Best Selling'" class="card mx-2" style="min-width: 15rem; height:50vh" (click)="onClickPackage(package.id)">
+            <img src={{package.imageUrl}} class="card-img-top" alt="..."
+              style="height: 30vh;">
+            <div class="card-body">
+              <h5 class="card-title">{{package.cityName}}</h5>
+              <p class="card-text">Starting at ${{package.price}} Per <br/> person</p>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="hotnNew container">
+    <h3>Hot & New...</h3>
+    <div class="cards">
+      <ng-container *ngFor="let package of packages">
+        <ng-container *ngFor="let type of package.type">
+          <div *ngIf="type.name==='Hot and New'" class="card mx-2" style="min-width: 15rem; height:50vh" (click)="onClickPackage(package.id)">
+            <img src={{package.imageUrl}} class="card-img-top" alt="..."
+              style="height: 30vh;">
+            <div class="card-body">
+              <h5 class="card-title">{{package.cityName}}</h5>
+              <p class="card-text">Starting at ${{package.price}} Per <br/> person</p>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="hotnNew container">
+    <h3>Recommend...</h3>
+    <div class="cards">
+      <ng-container *ngFor="let package of packages">
+        <ng-container *ngFor="let type of package.type">
+          <div *ngIf="type.name==='Recommend'" class="card mx-2" style="min-width: 15rem; height:50vh" (click)="onClickPackage(package.id)">
+            <img src={{package.imageUrl}} class="card-img-top" alt="..."
+              style="height: 30vh;">
+            <div class="card-body">
+              <h5 class="card-title">{{package.cityName}}</h5>
+              <p class="card-text">Starting at ${{package.price}} Per <br/> person</p>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="offers container">
+    <h3 style="color:aliceblue">Offers...</h3>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" style="width:88vw ;  ">
+
+        <div class="carousel-item active " style="width:80vw ; ">
+          <div class="cards">
+            <div class="card m-2" style="width: 18rem;">
+              <img src="https://globalgrasshopper.com/wp-content/uploads/2011/01/Gadi-Sagar.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">REFER NOW !</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">Refer two friends now and get 5% OFF on any booking.</p>
+                <a routerLink="/explore" class="btn btn-primary">REFER NOW!</a>
+              </div>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="https://www.tourism-of-india.com/blog/wp-content/uploads/2017/04/munnar.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">SHARE NOW!</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">Share your experience on instagram and tag us and earn 5% OFF on any booking!</p>
+                <a routerLink="https://www.instagram.com/" class="btn btn-primary">Share now!</a>
+              </div>
+            </div>
+            
+            <div class="card m-2" style="width: 18rem;">
+              <img
+                src="https://www.tripsavvy.com/thmb/h-7J_ixg2iHIgvbJRLJFrae4mhs=/1139x854/smart/filters:no_upscale()/183471749-56a3be3d5f9b58b7d0d392a3.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Get Free Cancellation on Train Bookings!</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">Make your Train travel easier , penalty free and worry-free.</p>
+                <a routerLink="/explore" class="btn btn-primary">Explore Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="width:80vw ; ">
+          <div class="cards">
+            <div class="card m-2" style="width: 18rem;">
+              <img src="https://thumbs.dreamstime.com/b/happy-travel-woman-vacation-concept-funny-traveler-enjoy-her-trip-ready-to-adventure-happy-travel-woman-vacation-concept-118679424.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">LIVE NOW:FLAT 50% OFF* on holiday packages</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">book between 1st Dec and 31st Jan! </p>
+                <a routerLink="/explore" class="btn btn-primary">BOOK NOW</a>
+              </div>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+              <img
+                src="https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">INTRODUCED:'Zero Cancellation'!</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">A WOW benefit to help you get 100% refund on international flight cancellations.</p>
+                <a routerLink="/explore" class="btn btn-primary">BOOK NOW</a>
+              </div>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="https://thumbs.dreamstime.com/b/singapore-city-skyline-s-business-district-95803846.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Explore Magical Singapore</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">with fun-filled @ the Universal Studios, waterparks & more!</p>
+                <a routerLink="/explore" class="btn btn-primary">BOOK NOW</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="carousel-item" style="width:80vw ; ">
+          <div class="cards">
+            <div class="card m-2" style="width: 18rem;">
+              <img src="http://softfortravel.com/wp-content/uploads/2022/01/domestic_citizen_tour_travel_india.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Explore INCREDIBLE INDIA...</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">Explore india @ minimum price!</p>
+                <a routerLink="/explore" class="btn btn-primary">Explore now</a>
+              </div>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="https://images.unsplash.com/photo-1587922546307-776227941871?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z29hfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">For an Awesome Vacay in GOA:</h5>
+                <p class="card-text" style="font-size: small; font-weight:300;">Enjoy water sports and more fun-filled activities in Goa.</p>
+                <a routerLink="/explore" class="btn btn-primary">Book Activities</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+<script src="./explore.component.js"></script>

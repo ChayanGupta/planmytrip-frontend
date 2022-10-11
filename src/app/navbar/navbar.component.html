@@ -1,0 +1,57 @@
+<nav  class="nav1 navbar navbar-expand-sm navbar-dark" style="background-color: rgb(19, 47, 99);">
+    <div class="logo">
+    <!-- no login logo -->
+        <a class="navbar-brand" routerLinkActive="active" routerLink="" *ngIf="!isLoggedIn()">
+            <div class="image"></div>
+        </a>
+        <a class="navbar-brand" routerLinkActive="active" routerLink="" *ngIf="!isLoggedIn() " style="color:white; font-size: 1vmax;"> Plan Your Trip </a>
+
+     <!-- user login logo -->
+        <a class="navbar-brand"  routerLinkActive="active" routerLink="/homepage"  *ngIf="isLoggedIn() && !isAdmin()">
+            <div class="image"></div>
+        </a>
+        <a class="navbar-brand"   routerLinkActive="active" routerLink="/homepage"  *ngIf="isLoggedIn() && !isAdmin()" style="color:white; font-size: 1vmax;"> Plan Your Trip </a>
+
+    <!-- admin login logo -->
+        <a class="navbar-brand"  routerLinkActive="active" routerLink="/admin_homepage"  *ngIf="isLoggedIn() && isAdmin()">
+            <div class="image"></div>
+        </a>
+        <a class="navbar-brand"   routerLinkActive="active" routerLink="/admin_homepage"  *ngIf="isLoggedIn() && isAdmin()" style="color:white; font-size: 1vmax;"> Plan Your Trip </a>
+
+
+    </div>
+        <div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="!isLoggedIn()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn() && !isAdmin()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="/homepage" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn() && isAdmin()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="/admin_homepage" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn()  && !isAdmin()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="/explore" [routerLinkActiveOptions]="{exact: true}">Packages</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active" routerLink="about" [routerLinkActiveOptions]="{exact: true}"> About </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active" routerLink="packages" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+                </li> -->
+                <li class="nav-item" *ngIf="!isLoggedIn()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="/login" [routerLinkActiveOptions]="{exact: true}"> Login </a>
+                </li>
+                <li class="nav-item" *ngIf="!isLoggedIn()">
+                    <a class="nav-link " routerLinkActive="active" routerLink="/register" [routerLinkActiveOptions]="{exact: true}"> Register </a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn()">
+                    {{userDetails.user.name}}
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn()">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/" (click)="onLogout()" [routerLinkActiveOptions]="{exact: true}"> Logout </a>
+                </li>
+            </ul>
+        </div>
+</nav>

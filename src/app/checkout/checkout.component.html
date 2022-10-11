@@ -1,0 +1,111 @@
+<body>
+    <section class="container">
+        <div class="heading">
+            <h4 >Complete order</h4>
+            <hr size="3" color="black">
+        </div>
+        <div class="content">
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="row">
+                    <label for="subtotal" class="col-sm-2 col-form-label">Subtotal : </label>
+                    <div class="col-sm-2">
+                      <input type="text" readonly class="form-control-plaintext" id="subtotal" value="$ 345.6" style="padding-left:1vmax">
+                    </div>
+                </div>
+                <div class=" row">
+                    <label for="tax" class="col-sm-2 col-form-label">Tax : </label>
+                    <div class="col-sm-2">
+                      <input type="text" readonly class="form-control-plaintext" id="tax" value="10%" style="padding-left:1vmax" >
+                    </div>
+                </div>
+                <div class=" row">
+                    <label class="col-sm-2 col-form-label">No. of People :</label>
+                    <div class="col-sm-2">
+                        <input class="form-control-plaintext"  type="number" value="1" style="background-color: rgb(215, 215, 213); padding-left:1vmax" >
+                    </div>  
+                </div>
+                <hr>
+                <div class=" row">
+                    <label for="total" class="col-sm-2 col-form-label">Total price with tax : </label>
+                    <div class="col-sm-2">
+                      <input type="text" readonly class="form-control-plaintext" id="total" value="$ 1605.6" style=" padding-left:1vmax;background-color: rgb(215, 215, 175);">
+                    </div>
+                </div>
+                <hr>
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="validationCustom01" value="" placeholder="Abc xyz" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please provide correct Name.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Mobile No.</label>
+                  <input type="number" class="form-control" id="validationCustom02" value="" placeholder="1234567890" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please provide correct Mobile No.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">Email</label>
+                  <div class="input-group has-validation">
+                    <input type="email" value="" placeholder="abc@xyz.com" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required >
+                    <div class="invalid-feedback">
+                      Please provide correct email.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom03" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid address.
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">City</label>
+                  <input type="text" class="form-control" id="validationCustom03" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">State</label>
+                  <input type="text" class="form-control" id="validationCustom04" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom05" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="validationCustom05" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Checkout</button>
+                </div>
+              </form>
+        </div>
+
+    </section>
+    
+</body>

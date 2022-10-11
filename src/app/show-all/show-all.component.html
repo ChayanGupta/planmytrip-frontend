@@ -1,0 +1,25 @@
+<section>
+    
+    <div class="container">
+        <input class="form-control me-2" type="text" name="search" [(ngModel)]="searchText" placeholder="Search by package name">
+    </div>
+    <hr>
+    <h3>List Of All Packages</h3>
+    <hr>
+    <div class="cards">
+    <div *ngFor="let package of packages | filter:searchText" class="card mx-2" style="width: 15rem; height:50vh">
+        <img  src={{package.imageUrl}} class="card-img-top" alt="..."
+          style="height: 30vh;">
+        <div class="card-body">
+          <h5 class="card-title">{{package.cityName}}</h5>
+          <div class="bottom container">
+            <a (click)="deletePackage(package.id)"><div class="delete"></div></a>
+            <a (click)="updatePackage(package.id)"><div class="edit"></div></a>
+        </div>
+        </div>
+          
+      </div>
+      
+    </div>
+
+</section>

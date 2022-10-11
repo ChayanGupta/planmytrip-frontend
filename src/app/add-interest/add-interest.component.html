@@ -1,0 +1,43 @@
+<section>
+    <div class="show">
+        <div class="container">
+            <input class="form-control me-2" type="text" name="search" [(ngModel)]="searchText"
+                placeholder="Search by interest name">
+        </div>
+        <hr>
+        <h3>List Of All Interests</h3>
+        <hr>
+        <table class="table table-light table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Area of Interest</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let interest of interests | filter:searchText">
+                    <td>{{interest.id}}</td>
+                    <td>{{interest.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="add">
+        <h2 class="text-center mt-2 mb-2">Add Area of Interest</h2>
+        <form form [formGroup]="addInterestForm" (ngSubmit)="onSubmit()">
+            <div class=" form-group">
+                <label>Area of Interest</label>
+                <input type="text" class="form-control" id="name" name="name" formControlName="name">
+                <br>
+                <span *ngIf="addInterestForm.get('name')?.invalid && addInterestForm.get('name')?.touched"
+                    style="color: red;">
+                    <span *ngIf="addInterestForm.get('name').errors['required']">
+                        This field is required!
+                    </span>
+                </span>
+            </div>
+            <button [disabled]="addInterestForm.invalid" class="mt-3 btn btn-outline-light" type="submit">Add</button>
+        </form>
+    </div>
+
+</section>

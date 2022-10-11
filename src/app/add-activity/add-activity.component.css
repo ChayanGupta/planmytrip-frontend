@@ -1,0 +1,25 @@
+section{
+    min-height: 88vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.show, .add{
+    width: 50%;
+    padding: 5%;
+}
+.add{
+    border-left: 1px solid white;
+}
+button{
+    cursor: pointer;
+}
+table{
+    text-align: center;
+}
+thead{
+    color: rgb(60, 121, 173);
+}
+h3{
+    text-align: center;
+}

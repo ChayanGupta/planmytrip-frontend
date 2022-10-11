@@ -1,0 +1,12 @@
+
+section{
+    min-height: 80vh;
+    padding: 2vmax;
+    background: linear-gradient(to bottom right,white,rgb(235, 233, 233),rgb(210, 209, 209));
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}

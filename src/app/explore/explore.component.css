@@ -1,0 +1,70 @@
+section{
+    width: 100%;
+    min-height:88vh ;
+    background: linear-gradient(to bottom right,rgb(104, 144, 219),rgb(57, 83, 132),rgb(19, 47, 99));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.filter{
+    height: 20vh;
+    margin: 5vh 0 0 10vh ;
+    display: flex;
+    align-items: center;
+}
+.filter>form{
+    height: 20vh;
+    margin: 5vh 0 0 10vh ;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.interest,.bestSelling,.hotnNew,.offers{
+    height: 70vh;
+    margin-top: 5vh  ;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right,rgb(246, 247, 248),rgb(233, 234, 235),rgb(197, 197, 199));
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between;
+}
+.budget{
+    width: 30vw;
+}
+.input-group{
+    width: 30vw;
+}
+.cards{
+    max-width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+.offers{
+    height: 95vh;
+    background: linear-gradient(to bottom right,rgb(103, 125, 144),rgb(78, 99, 118),rgb(76, 97, 114))
+}
+.offers  .cards{
+    margin-left: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: flex-start;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance:none;
+    width: 0.00000001px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: rgba(76, 76, 76, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+

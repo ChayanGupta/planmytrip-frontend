@@ -1,0 +1,56 @@
+
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+            <h1>Plan Your Trip.</h1>
+            <p>To the world of an incredible vacation.</p>
+            </div>
+        </div>
+            <div class="right">
+            <h5>Register</h5> <br>
+            <p>Already have an account? <a routerLinkActive="active" routerLink="/login" >Login </a></p>
+            
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                <p style="color: red;">{{setErrorMessage()}}</p>
+                <div class="inputs">
+                    <input type="text" placeholder="Name" formControlName="name">
+                    <br>
+					<span *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+						style="color: red;">
+						<span *ngIf="registerForm.get('name').errors['required']">
+							This field is required!
+						</span>
+					</span><br>
+                    <input type="email" placeholder="Email" formControlName="email">
+                    <br>
+					<span *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+						style="color: red;">
+						<span *ngIf="registerForm.get('email').errors['required']">
+							This field is required!
+						</span>
+						<span *ngIf="registerForm.get('email').errors['email']">
+							Please enter valid email address!
+						</span>
+					</span><br>
+                    <input type="password" placeholder="password" formControlName="password">
+                    <br>
+                    <span *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+						style="color: red;">
+						<span *ngIf="registerForm.get('password').errors['required']">
+							This field is required!
+						</span>
+						<span *ngIf="registerForm.get('password').errors['minlength']">
+							Password must be 5 characters or more!
+						</span>
+					</span>
+                </div>
+                <br><br>
+                
+                <button type="submit" [disabled]="registerForm.invalid"> Register </button>
+            </form>
+                
+                
+        </div>
+        
+    </div>
+

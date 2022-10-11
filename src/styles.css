@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    min-height: 100%;
+}
+a{
+    text-decoration: none;
+}
+body{
+    max-width: 100vmax;
+    min-height: 100%;
+    background: linear-gradient(to bottom,rgb(104, 144, 219),rgb(57, 83, 132),rgb(19, 47, 99));
+    font-family: roboto;
+    font-weight: 600;
+    color: white;
+}
+

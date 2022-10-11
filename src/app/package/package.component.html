@@ -1,0 +1,76 @@
+<section>
+    <div class="top">
+        <div class="img"></div>
+        <div class="text ">
+            <h1>{{package.package.cityName}}</h1>
+            <h3>Price: <br> $ {{package.package.price}}</h3>
+        </div>
+    </div>
+    <div class="bottom">
+        
+        <!-- activity price , short Description, per day activities -->
+        <div class="left">
+            <form action="">
+                <div>
+                    <h3>Add Activities: </h3>
+                    <div class="activity_list mb-2" *ngFor="let activity of package.package.activities">
+                        {{activity.activityName}} | {{activity.activityPrice}} 
+                        <div class="add">
+                            <button class="plus">➕</button> 
+                            <button>➖</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+            <br>
+            <h4>Description: </h4> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, voluptas. Magnam asperiores minus ducimus placeat perferendis enim earum error omnis voluptatibus quos rem corporis cumque soluta, exercitationem vitae dolor dicta.</p> 
+            
+            <div class="input-group mt-2">
+                <label class="input-group-text" for="inputGroupSelect01">No. of Days</label>
+                <select class="form-select" id="inputGroupSelect01">
+                    <option selected>3</option>
+                    <option >5</option>
+                    <option >7</option>
+                  </select>
+            </div>
+        </div>
+        <div class="right">
+            <h2>Total (per person) :</h2> <br><br>
+            <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">Price : </label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value={{package.package.price}}>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">Flights : </label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="$ 95.6">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">Hotel : </label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="$ 25.6">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">Activities: </label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="$ 5.6">
+                </div>
+              </div>
+            <hr size="5" color="black" >
+            <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">Subtotal: </label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value={{package.package.price}}>
+                </div>
+              </div>
+              <a class="btn btn-primary" routerLinkActive="active" routerLink="/checkout" 
+                style="text-decoration :none;"> Checkout </a>
+              
+        </div>
+    </div>
+</section>
